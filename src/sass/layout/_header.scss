@@ -1,0 +1,7 @@
+.header__wrapper {
+    @include flex(row, space-between, center);
+    padding-top: 50px;
+    @media screen and (max-width: 768px) {
+        padding-bottom: 50px;
+    }
+}

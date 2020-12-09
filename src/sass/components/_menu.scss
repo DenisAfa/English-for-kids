@@ -1,0 +1,47 @@
+.menu__list {
+    @include flex(column, start, center);
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-menu;
+    user-select: none;
+    z-index: 15;
+    transform: translateX(-100%);
+    transition: 0.2s all linear;
+    &_active {
+        transform: translateX(0);
+    }
+    @media screen and (max-width: 768px) {
+        width: 50%
+    }
+    @media screen and (max-width: 425px) {
+        width: 100%
+    }
+}
+
+.menu__item {
+    margin-bottom: 30px;
+    font-size: 20px;
+    &_first {
+        padding-top: 130px;
+    }
+    &_active {
+        text-decoration: underline;
+    }
+    @media screen and (max-width: 768px) {
+        margin-bottom: 26px;
+        font-size: 16px;
+    }
+    @media screen and (max-width: 425px) {
+        font-size: 24px;
+    }
+}
+
+.item__text {
+    cursor: pointer;
+    &:hover {
+        color: white;
+    }
+}
