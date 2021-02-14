@@ -71,7 +71,10 @@ export default class Statistics {
 
       const sortedRows = Array.from(lines)
         .slice(1)
-        .sort((rowA, rowB) => Number(rowA.cells[6].innerHTML) - Number(rowB.cells[6].innerHTML));
+        .sort((rowA, rowB) => { 
+            const columnPercent = 6;
+            Number(rowA.cells[columnPercent].innerHTML) - Number(rowB.cells[columnPercent].innerHTML) 
+        });
       const trainingWordsArr = [];
       sortedRows.forEach((sortedRow) => {
         const percentValue = Number(sortedRow.lastChild.textContent);

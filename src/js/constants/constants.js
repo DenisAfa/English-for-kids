@@ -1,3 +1,12 @@
+import cardsSetA from './cardsSetA';
+import cardsSetB from './cardsSetB';
+import cardsAnimalA from './cardsAnimalA';
+import cardsAnimalB from './cardsAnimalB';
+import cardsClothes from './cardsClothes';
+import cardsEmotions from './cardsEmotions';
+import cardsFamily from './cardsFamily';
+import cardsFood from './cardsFood';
+
 const categories = ['Action (Set A)', 'Action (Set B)', 'Animal (Set A)', 'Animal (Set B)', 'Clothes', 'Emotion', 'Family', 'Food'];
 const ACTION_SET_A = 'Action (Set A)';
 const ACTION_SET_B = 'Action (Set B)';
@@ -14,6 +23,8 @@ const RIGHT_CARD_SOUND = 'https://raw.githubusercontent.com/DenisAfa/assets-for-
 const WRONG_CARD_SOUND = 'https://raw.githubusercontent.com/DenisAfa/assets-for-english-for-kids/main/audio/no.mp3';
 const WIN_GAME_SOUND = 'https://raw.githubusercontent.com/DenisAfa/assets-for-english-for-kids/main/audio/gameWin.mp3';
 const LOSE_GAME_SOUND = 'https://raw.githubusercontent.com/DenisAfa/assets-for-english-for-kids/main/audio/gameOver.mp3';
+const categoriesCards = [cardsSetA, cardsSetB, cardsAnimalA, cardsAnimalB,
+    cardsClothes, cardsEmotions, cardsFamily, cardsFood];
 
 export {
   categories,
@@ -32,4 +43,5 @@ export {
   WRONG_CARD_SOUND,
   WIN_GAME_SOUND,
   LOSE_GAME_SOUND,
+  categoriesCards
 };

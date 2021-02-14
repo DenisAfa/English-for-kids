@@ -6,7 +6,7 @@
     font-size: 25px;
     padding: 10px;
     border-radius: 11px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: $color-shadow-button;
     width: 265px;
     text-align: center;
     cursor: pointer;
@@ -16,7 +16,7 @@
     font-size: 25px;
     padding: 10px;
     border-radius: 11px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: $color-shadow-button;
     width: 265px;
     text-align: center;
     cursor: pointer;

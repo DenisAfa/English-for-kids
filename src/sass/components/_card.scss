@@ -14,15 +14,15 @@
 }
 
 .card__main:hover {
-    box-shadow: 0 0 15px rgba($color: rgba(0,0,0,0.5), $alpha: 1.0);
+    box-shadow: $color-shadow-cards;
 }
 
 .container__not-translate:hover {
-    box-shadow: 0 0 15px rgba($color: rgba(0,0,0,0.5), $alpha: 1.0);
+    box-shadow: $color-shadow-cards;
 }
 
 .container__not-translate_active {
-    box-shadow: 0 0 15px rgba($color: rgba(0,0,0,0.5), $alpha: 1.0);
+    box-shadow: $color-shadow-cards;
 }
 
 .container__not-translate_choice {

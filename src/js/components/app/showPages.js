@@ -37,6 +37,13 @@ export function createNewWordCard(cardName) {
   card.sound();
 }
 
+function createNewPage(cardSet) {
+    let shuffleCardsName = getRandomCard(cardSet);
+      shuffleCardsName.forEach((cardName) => {
+        createNewWordCard(cardName);
+      });
+}
+
 export default function showPages(event) {
   let categoryName;
   if (event.target.closest('div').classList.contains('switcher')) {
@@ -69,69 +76,45 @@ export default function showPages(event) {
       categoryMenu.classList.add('menu__item_active');
     }
   });
-  let shuffleCardsName;
+
   switch (categoryName) {
     case ACTION_SET_A: {
-      shuffleCardsName = getRandomCard(cardsSetA);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+        createNewPage(cardsSetA);
       break;
     }
 
     case ACTION_SET_B: {
-      shuffleCardsName = getRandomCard(cardsSetB);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+        createNewPage(cardsSetB);
       break;
     }
 
     case ANIMAL_SET_A: {
-      shuffleCardsName = getRandomCard(cardsAnimalA);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsAnimalA);
       break;
     }
 
     case ANIMAL_SET_B: {
-      shuffleCardsName = getRandomCard(cardsAnimalB);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsAnimalB);
       break;
     }
 
     case CLOTHES: {
-      shuffleCardsName = getRandomCard(cardsClothes);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsClothes);
       break;
     }
 
     case EMOTION: {
-      shuffleCardsName = getRandomCard(cardsEmotions);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsEmotions);
       break;
     }
 
     case FAMILY: {
-      shuffleCardsName = getRandomCard(cardsFamily);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsFamily);
       break;
     }
 
     case FOOD: {
-      shuffleCardsName = getRandomCard(cardsFood);
-      shuffleCardsName.forEach((cardName) => {
-        createNewWordCard(cardName);
-      });
+      createNewPage(cardsFood);
       break;
     }
 

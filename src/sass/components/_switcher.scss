@@ -23,7 +23,7 @@
     outline: none;
     border-radius: 20px;
     transition: 0.5s;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: $color-shadow-switcher;
     &:checked {
         background: $color-switcher-active;
     }
@@ -37,7 +37,7 @@
         left: 0;
         background: $color-switcher-button;
         transform: scale(1.1);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: $color-shadow-switcher-button;
         transition: 0.5s;
     }
     &:checked:before {

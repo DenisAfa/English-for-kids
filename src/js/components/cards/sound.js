@@ -8,6 +8,7 @@ import cardsFamily from '../../constants/cardsFamily';
 import cardsFood from '../../constants/cardsFood';
 import { isGame } from '../game/startGame';
 import { isPlay } from '../game/playGame';
+import { categoriesCards } from '../../constants/constants'
 
 function createNewSound(card) {
   if (!isGame) {
@@ -28,10 +29,8 @@ export default function playSound(event) {
   } else if (!isPlay) {
     targetCardId = Number(event.target.closest('div').dataset.cardId);
   }
-
-  const categories = [cardsSetA, cardsSetB, cardsAnimalA, cardsAnimalB,
-    cardsClothes, cardsEmotions, cardsFamily, cardsFood];
-  categories.forEach((category) => {
+  
+  categoriesCards.forEach((category) => {
     category.forEach((card) => {
       const cardId = card.id;
       if (cardId === targetCardId) {

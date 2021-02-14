@@ -17,6 +17,7 @@ import {
   WIN_GAME_SOUND,
   LOSE_GAME_SOUND,
   categories,
+  categoriesCards
 } from '../../constants/constants';
 import playSound from '../cards/sound';
 import createMainPage from '../app/createMainPage';
@@ -64,145 +65,26 @@ export function getRandomArrId() {
 }
 
 function addPlayGameStat(cardId) {
-  const categoryName = document.querySelector('.menu__item_active').textContent;
-  switch (categoryName) {
-    case ACTION_SET_A:
-      cardsSetA.forEach((card) => {
-        const targetCardId = card.id;
+  categoriesCards.forEach((categoryCard) => {
+      categoryCard.forEach((card) => {
+        let targetCardId = card.id;
         if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case ACTION_SET_B:
-      cardsSetB.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case ANIMAL_SET_A:
-      cardsAnimalA.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case ANIMAL_SET_B:
-      cardsAnimalB.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case CLOTHES:
-      cardsClothes.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case EMOTION:
-      cardsEmotions.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case FAMILY:
-      cardsFamily.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    case FOOD:
-      cardsFood.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardId) {
-          card.game += 1;
-        }
-      });
-      break;
-    default:
-  }
+            card.game += 1;
+          }
+      })
+  })
 }
 
 function addPlayErrorStat(cardSound) {
   const categoryName = document.querySelector('.menu__item_active').textContent;
-  switch (categoryName) {
-    case ACTION_SET_A:
-      cardsSetA.forEach((card) => {
-        const targetCardId = card.id;
+  categoriesCards.forEach((categoryCard) => {
+    categoryCard.forEach((card) => {
+        let targetCardId = card.id;
         if (targetCardId === cardSound) {
           card.error += 1;
         }
-      });
-      break;
-    case ACTION_SET_B:
-      cardsSetB.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case ANIMAL_SET_A:
-      cardsAnimalA.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case ANIMAL_SET_B:
-      cardsAnimalB.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case CLOTHES:
-      cardsClothes.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case EMOTION:
-      cardsEmotions.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case FAMILY:
-      cardsFamily.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    case FOOD:
-      cardsFood.forEach((card) => {
-        const targetCardId = card.id;
-        if (targetCardId === cardSound) {
-          card.error += 1;
-        }
-      });
-      break;
-    default:
-  }
+    })
+  })
 }
 
 function incorrectAnswer(answerId, cardId, cardSound) {
@@ -223,7 +105,8 @@ function incorrectAnswer(answerId, cardId, cardSound) {
 
 function gameOver() {
   const timeBeforeNewGame = 3000;
-  if (answerId.length === 8) {
+  const maxCorrectAnswer = 8;
+  if (answerId.length === maxCorrectAnswer) {
     if (isGameWin) {
       const overlay = document.querySelector('.substrate');
       overlay.classList.add('substrate_active');
@@ -307,4 +190,11 @@ export function playGame() {
   cards.forEach((card) => {
     card.addEventListener('click', () => guessCard(event, cardsIdArr));
   });
+}
+
+export function changeModePlayForMenu() {
+    if (isPlay) {
+        newGamePlay();
+      }
+    checkModePlay();
 }

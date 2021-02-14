@@ -19,50 +19,39 @@ import {
   FOOD,
 } from '../../constants/constants';
 
-export default function createMainPage(categories) {
-  let image;
-  let newCard;
-  switch (categories) {
+function createMainCard(category, categoryCard) {
+    let image = categoryCard[0].image;
+    let newCard = new Card(category, image);
+    newCard.create();
+}
+
+export default function createMainPage(category) {
+  switch (category) {
     case ACTION_SET_A:
-      image = cardsSetA[0].image;
-      newCard = new Card(ACTION_SET_A, image);
-      newCard.create();
+        createMainCard(ACTION_SET_A, cardsSetA);
       break;
     case ACTION_SET_B:
-      image = cardsSetB[0].image;
-      newCard = new Card(ACTION_SET_B, image);
-      newCard.create();
+        createMainCard(ACTION_SET_B, cardsSetB);
       break;
     case ANIMAL_SET_A:
-      image = cardsAnimalA[0].image;
-      newCard = new Card(ANIMAL_SET_A, image);
-      newCard.create();
+        createMainCard(ANIMAL_SET_A, cardsAnimalA);
       break;
     case ANIMAL_SET_B:
-      image = cardsAnimalB[0].image;
-      newCard = new Card(ANIMAL_SET_B, image);
-      newCard.create();
+        createMainCard(ANIMAL_SET_B, cardsAnimalB);
       break;
     case CLOTHES:
-      image = cardsClothes[0].image;
-      newCard = new Card(CLOTHES, image);
-      newCard.create();
+        createMainCard(CLOTHES, cardsClothes);
       break;
     case EMOTION:
-      image = cardsEmotions[0].image;
-      newCard = new Card(EMOTION, image);
-      newCard.create();
+        createMainCard(EMOTION, cardsEmotions);
       break;
     case FAMILY:
-      image = cardsFamily[0].image;
-      newCard = new Card(FAMILY, image);
-      newCard.create();
+        createMainCard(FAMILY, cardsFamily);
       break;
     case FOOD:
-      image = cardsFood[0].image;
-      newCard = new Card(FOOD, image);
-      newCard.create();
+        createMainCard(FOOD, cardsFood);
       break;
     default:
   }
 }
+

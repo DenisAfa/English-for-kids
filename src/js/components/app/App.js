@@ -6,7 +6,7 @@ import { categories } from '../../constants/constants';
 import showPages from './showPages';
 import Game from '../game/Game';
 import { checkMode } from '../game/startGame';
-import { checkModePlay, isPlay, newGamePlay } from '../game/playGame';
+import { changeModePlayForMenu } from '../game/playGame';
 import createMainPage from './createMainPage';
 
 export default class App {
@@ -30,12 +30,7 @@ export default class App {
     menu.addEventListener('click', showPages);
     categoriesMenu.addEventListener('click', checkMode);
     menu.addEventListener('click', checkMode);
-    menu.addEventListener('click', () => {
-      if (isPlay) {
-        newGamePlay();
-      }
-      checkModePlay();
-    });
+    menu.addEventListener('click', changeModePlayForMenu);
   }
 
   mainMenu() {
