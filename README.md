@@ -1,2 +1,2 @@
 # English-for-kids
-https://denisafa.github.io/english-for-kids/
+deploy: https://denisafa.github.io/english-for-kids/
